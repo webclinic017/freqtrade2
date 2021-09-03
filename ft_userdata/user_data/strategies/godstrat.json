@@ -1,0 +1,51 @@
+{
+  "strategy_name": "GodStraNew",
+  "params": {
+    "stoploss": {
+      "stoploss": -0.128
+    },
+    "buy": {
+      "buy_crossed_indicator0": "CDLUPSIDEGAP2CROWS-55",
+      "buy_crossed_indicator1": "AVGPRICE-5",
+      "buy_crossed_indicator2": "CDLSHOOTINGSTAR-100",
+      "buy_indicator0": "CCI-12",
+      "buy_indicator1": "AROON-0-100",
+      "buy_indicator2": "CDLHANGINGMAN-12",
+      "buy_operator0": "D",
+      "buy_operator1": ">",
+      "buy_operator2": "D",
+      "buy_real_num0": 0.2,
+      "buy_real_num1": 1.0,
+      "buy_real_num2": 0.6
+    },
+    "sell": {
+      "sell_crossed_indicator0": "CDLSPINNINGTOP-12",
+      "sell_crossed_indicator1": "CDL3INSIDE-6",
+      "sell_crossed_indicator2": "EMA-12",
+      "sell_indicator0": "CDLHANGINGMAN-15",
+      "sell_indicator1": "CDLABANDONEDBABY-5",
+      "sell_indicator2": "CDLCLOSINGMARUBOZU-15",
+      "sell_operator0": ">",
+      "sell_operator1": "OT",
+      "sell_operator2": "=R",
+      "sell_real_num0": 0.6,
+      "sell_real_num1": 1.0,
+      "sell_real_num2": 0.9
+    },
+    "protection": {},
+    "roi": {
+      "0": 0.149,
+      "27": 0.051,
+      "53": 0.037,
+      "152": 0
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.179,
+      "trailing_stop_positive_offset": 0.22599999999999998,
+      "trailing_only_offset_is_reached": true
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2021-08-29 14:10:53.225581+00:00"
+}
