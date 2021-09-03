@@ -23,6 +23,5 @@ services:
     command: >
       trade 
       --dry-run-wallet 0.0064
-      --logfile /freqtrade/user_data/logs/freqtrade.log
       --config /freqtrade/user_data/config.json
       --strategy Diamond
