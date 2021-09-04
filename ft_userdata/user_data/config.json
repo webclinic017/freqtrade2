@@ -55,6 +55,7 @@
     },
     "pair_whitelist": [
       "ALGO/USDT",
+      "BTC/USDT",
       "ATOM/USDT",
       "BAT/USDT",
       "BCH/USDT",
