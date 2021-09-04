@@ -1,18 +1,18 @@
 {
-  "dry_run": true,
-  "max_open_trades": 5,
+  "max_open_trades": 25,
   "stake_currency": "USDT",
   "stake_amount": "unlimited",
   "tradable_balance_ratio": 0.99,
   "fiat_display_currency": "USD",
+  "timeframe": "1m",
+  "dry_run": true,
   "cancel_open_orders_on_exit": false,
-  "forcebuy_enable": false,
   "unfilledtimeout": {
     "buy": 10,
     "sell": 30
   },
   "bid_strategy": {
-    "price_side": "ask",
+    "price_side": "bid",
     "ask_last_balance": 0.0,
     "use_order_book": false,
     "order_book_top": 1,
@@ -22,23 +22,12 @@
     }
   },
   "ask_strategy": {
-    "price_side": "bid",
+    "price_side": "ask",
     "use_order_book": false,
     "order_book_min": 1,
     "order_book_max": 1,
     "use_sell_signal": true,
-    "sell_profit_only": false,
-    "ignore_roi_if_buy_signal": false,
-    "ignore_buying_expired_candle_after": 600
-  },
-  "order_types": {
-    "buy": "market",
-    "sell": "market",
-    "forcesell": "market",
-    "emergencysell": "market",
-    "stoploss": "market",
-    "stoploss_on_exchange": false,
-    "stoploss_on_exchange_interval": 60
+    "ignore_roi_if_buy_signal": true
   },
   "download_trades": true,
   "exchange": {
@@ -48,48 +37,39 @@
     "ccxt_config": {"enableRateLimit": true},
     "ccxt_async_config": {
       "enableRateLimit": true,
-      "rateLimit": 3100
+      "rateLimit": 200
     },
     "pair_whitelist": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "ETC/USDT",
+      "LTC/USDT",
+      "XLM/USDT",
+      "ADA/USDT"
     ],
     "pair_blacklist": [
-
+      "XRP/USD",
+      "USDT/USD",
+      "USDC/USD",
+      "EUR/USD"
     ]
   },
   "pairlists": [
     {
       "method": "VolumePairList",
-      "number_assets": 20,
+      "number_assets": 50,
       "sort_key": "quoteVolume",
       "refresh_period": 1800
     },
-    {
-      "method": "AgeFilter",
-      "min_days_listed": 10
-    },
-    {
-      "method": "PriceFilter",
-      "low_price_ratio": 0.001
-    },
-    {
-      "method": "SpreadFilter",
-      "max_spread_ratio": 0.005
-    },
+    {"method": "AgeFilter", "min_days_listed": 10},
     {
       "method": "RangeStabilityFilter",
-      "lookback_days": 3,
-      "min_rate_of_change": 0.1,
+      "lookback_days": 5,
+      "min_rate_of_change": 0.01,
       "refresh_period": 1440
-    },
-    {
-      "method": "VolumePairList",
-      "number_assets": 15,
-      "sort_key": "quoteVolume"
-    },
-    {
-      "method": "PerformanceFilter"
     }
   ],
+
   "edge": {
     "enabled": false,
     "process_throttle_secs": 600,
