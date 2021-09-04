@@ -22,6 +22,6 @@ services:
     # Default command used when running `docker compose up`
     command: >
       trade 
-      --dry-run-wallet 0.0064
+      --dry-run-wallet 200
       --config /freqtrade/user_data/config.json
       --strategy Diamond

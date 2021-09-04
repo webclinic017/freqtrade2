@@ -1,7 +1,7 @@
 {
     "max_open_trades": 100,
-    "stake_currency": "BTC",
-    "stake_amount": 0.0006,
+    "stake_currency": "USDT",
+    "stake_amount": 20,
     "tradable_balance_ratio": 0.99,
     "fiat_display_currency": "EUR",
     "timeframe": "1m",
@@ -41,17 +41,17 @@
 
         ],
         "pair_blacklist": [
-            "BNB/BTC",
+            "BNB/BTC"
         ]
     },
     "pairlists": [
         {
             "method": "VolumePairList",
-            "number_assets": 100,
+            "number_assets": 40,
             "sort_key": "quoteVolume"
         },
         {"method": "AgeFilter", "min_days_listed": 10},
-        {"method": "PrecisionFilter"},
+        {"method": "PrecisionFilter"}
     ],
     "edge": {
         "enabled": false,
