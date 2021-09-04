@@ -1,5 +1,5 @@
 {
-  "dry_run": false,
+  "dry_run": true,
   "max_open_trades": 5,
   "stake_currency": "USDT",
   "stake_amount": "unlimited",
