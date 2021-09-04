@@ -24,4 +24,4 @@ services:
       trade 
       --dry-run-wallet 200
       --config /freqtrade/user_data/config.json
-      --strategy BinHV45
+      --strategy GodStraNew
