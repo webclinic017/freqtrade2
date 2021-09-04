@@ -94,7 +94,7 @@ class Diamond(IStrategy):
                                          #  'ma_fast', 'ma_slow', {...}
                                          ], default='ma_slow', space='buy')
 
-    sell_vertical_push = DecimalParameter(0.5, 1.5, decimals=3,  default=1, space='sell')
+    sell_vertical_push = DecimalParameter(0.5, 1.5, decimals=3, default=1, space='sell')
     sell_horizontal_push = IntParameter(0, 10, default=0, space='sell')
     sell_fast_key = CategoricalParameter(['open', 'high', 'low', 'close', 'volume',
                                           #  'ma_fast', 'ma_slow', {...}
@@ -115,7 +115,7 @@ class Diamond(IStrategy):
         conditions = []
         conditions.append(
             qtpylib.crossed_above
-            (
+                (
                 dataframe[self.buy_fast_key.value].shift(self.buy_horizontal_push.value),
                 dataframe[self.buy_slow_key.value] * self.buy_vertical_push.value
             )
@@ -124,7 +124,7 @@ class Diamond(IStrategy):
         if conditions:
             dataframe.loc[
                 reduce(lambda x, y: x & y, conditions),
-                'buy']=1
+                'buy'] = 1
 
         return dataframe
 
@@ -132,7 +132,7 @@ class Diamond(IStrategy):
         conditions = []
         conditions.append(
             qtpylib.crossed_below
-            (
+                (
                 dataframe[self.sell_fast_key.value].shift(self.sell_horizontal_push.value),
                 dataframe[self.sell_slow_key.value] * self.sell_vertical_push.value
             )
@@ -140,5 +140,5 @@ class Diamond(IStrategy):
         if conditions:
             dataframe.loc[
                 reduce(lambda x, y: x & y, conditions),
-                'sell']=1
+                'sell'] = 1
         return dataframe
