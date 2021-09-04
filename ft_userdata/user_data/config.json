@@ -72,7 +72,37 @@
   },
   "pairlists": [
     {
-      "method": "StaticPairList"
+      "method": "VolumePairList",
+      "number_assets": 25,
+      "sort_key": "quoteVolume",
+      "refresh_period": 1800
+    },
+    {
+      "method": "AgeFilter",
+      "min_days_listed": 10
+    },
+    {
+      "method": "SpreadFilter",
+      "max_spread_ratio": 0.005
+    },
+    {
+      "method": "PriceFilter",
+      "low_price_ratio": 0.001
+    },
+    {
+      "method": "RangeStabilityFilter",
+      "lookback_days": 3,
+      "min_rate_of_change": 0.1,
+      "refresh_period": 1440
+    },
+    {
+      "method": "VolumePairList",
+      "number_assets": 15,
+      "sort_key": "quoteVolume",
+      "refresh_period": 1800
+    },
+    {
+      "method": "PerformanceFilter"
     }
   ],
   "edge": {
