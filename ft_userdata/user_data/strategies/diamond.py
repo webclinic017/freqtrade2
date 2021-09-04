@@ -44,38 +44,39 @@ class Diamond(IStrategy):
     #    hyperopt : 5000 x SortinoHyperOptLossDaily,
     #    34/5000: 297 trades. 136/156/5 Wins/Draws/Losses. Avg profit   0.49%. Median profit   0.00%. Total profit  45.84477237 USDT (  33.96Σ%). Avg duration 11:54:00 min. Objective: -46.50379
 
-       # Buy hyperspace params:
-       buy_params = {
-           "buy_fast_key": "volume",
-           "buy_horizontal_push": 10,
-           "buy_slow_key": "volume",
-           "buy_vertical_push": 1.197,
-       }
+    # Buy hyperspace params:
+    buy_params = {
+        "buy_fast_key": "volume",
+        "buy_horizontal_push": 10,
+        "buy_slow_key": "volume",
+        "buy_vertical_push": 1.197,
+    }
 
-       # Sell hyperspace params:
-       sell_params = {
-           "sell_fast_key": "open",
-           "sell_horizontal_push": 5,
-           "sell_slow_key": "high",
-           "sell_vertical_push": 1.066,
-       }
+    # Sell hyperspace params:
+    sell_params = {
+        "sell_fast_key": "open",
+        "sell_horizontal_push": 5,
+        "sell_slow_key": "high",
+        "sell_vertical_push": 1.066,
+    }
 
-       # ROI table:
-       minimal_roi = {
-           "0": 0.179,
-           "21": 0.03,
-           "61": 0.012,
-           "179": 0
-       }
+    # ROI table:
+    minimal_roi = {
+        "0": 0.179,
+        "21": 0.03,
+        "61": 0.012,
+        "179": 0
 
-       # Stoploss:
-       stoploss = -0.342
+    }
 
-       # Trailing stop:
-       trailing_stop = True  # value loaded from strategy
-       trailing_stop_positive = 0.011  # value loaded from strategy
-       trailing_stop_positive_offset = 0.054  # value loaded from strategy
-       trailing_only_offset_is_reached = False  # value loaded from strategy
+    # Stoploss:
+    stoploss = -0.342
+
+    # Trailing stop:
+    trailing_stop = True  # value loaded from strategy
+    trailing_stop_positive = 0.011  # value loaded from strategy
+    trailing_stop_positive_offset = 0.054  # value loaded from strategy
+    trailing_only_offset_is_reached = False  # value loaded from strategy
 
     # timeframe
     timeframe = '5m'
