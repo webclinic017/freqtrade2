@@ -1,21 +1,20 @@
 {
-  "max_open_trades": 100,
-  "stake_currency": "USDT",
-  "stake_amount": 20,
+  "dry_run": false,
+  "max_open_trades": 5,
+  "stake_currency": "USD",
+  "stake_amount": "unlimited",
   "tradable_balance_ratio": 0.99,
-  "fiat_display_currency": "EUR",
-  "timeframe": "5m",
-  "dry_run": true,
+  "fiat_display_currency": "USD",
   "cancel_open_orders_on_exit": false,
+  "forcebuy_enable": false,
   "unfilledtimeout": {
     "buy": 10,
-    "sell": 30,
-    "unit": "minutes"
+    "sell": 30
   },
   "bid_strategy": {
-    "price_side": "bid",
+    "price_side": "ask",
     "ask_last_balance": 0.0,
-    "use_order_book": true,
+    "use_order_book": false,
     "order_book_top": 1,
     "check_depth_of_market": {
       "enabled": false,
@@ -23,56 +22,72 @@
     }
   },
   "ask_strategy": {
-    "price_side": "ask",
-    "use_order_book": true,
-    "order_book_top": 1
+    "price_side": "bid",
+    "use_order_book": false,
+    "order_book_min": 1,
+    "order_book_max": 1,
+    "use_sell_signal": true,
+    "sell_profit_only": false,
+    "ignore_roi_if_buy_signal": false,
+    "ignore_buying_expired_candle_after": 600
   },
+  "order_types": {
+    "buy": "market",
+    "sell": "market",
+    "forcesell": "market",
+    "emergencysell": "market",
+    "stoploss": "market",
+    "stoploss_on_exchange": false,
+    "stoploss_on_exchange_interval": 60
+  },
+  "download_trades": true,
   "exchange": {
     "name": "binance",
     "key": "",
     "secret": "",
-    "ccxt_config": {
-      "enableRateLimit": true
-    },
+    "ccxt_config": {"enableRateLimit": true},
     "ccxt_async_config": {
       "enableRateLimit": true,
-      "rateLimit": 200
+      "rateLimit": 3100
     },
     "pair_whitelist": [
-      "ALGO/USDT",
-      "ATOM/USDT",
-      "BAT/USDT",
-      "BCH/USDT",
-      "EOS/USDT",
-      "ETH/USDT",
-      "BTC/USDT",
-      "DOGE/USDT",
-      "IOTA/USDT",
-      "LINK/USDT",
-      "LTC/USDT",
-      "NEO/USDT",
-      "XMR/USDT",
-      "XRP/USDT",
-      "XTZ/USDT"
     ],
     "pair_blacklist": [
-      "BNB/BTC",
-      "BNB/BUSD",
-      "BNB/ETH",
-      "BNB/EUR",
-      "BNB/NGN",
-      "BNB/PAX",
-      "BNB/RUB",
-      "BNB/TRY",
-      "BNB/TUSD",
-      "BNB/USDC",
-      "BNB/USDS",
-      "BNB/USDT"
+
     ]
   },
   "pairlists": [
     {
-      "method": "StaticPairList"
+      "method": "VolumePairList",
+      "number_assets": 20,
+      "sort_key": "quoteVolume",
+      "refresh_period": 1800
+    },
+    {
+      "method": "AgeFilter",
+      "min_days_listed": 10
+    },
+    {
+      "method": "PriceFilter",
+      "low_price_ratio": 0.001
+    },
+    {
+      "method": "SpreadFilter",
+      "max_spread_ratio": 0.005
+    },
+    {
+      "method": "RangeStabilityFilter",
+      "lookback_days": 3,
+      "min_rate_of_change": 0.1,
+      "refresh_period": 1440
+    },
+    {
+      "method": "VolumePairList",
+      "number_assets": 15,
+      "sort_key": "quoteVolume"
+    },
+    {
+      "method": "PerformanceFilter"
     }
   ],
   "edge": {
@@ -107,7 +122,6 @@
   },
   "bot_name": "freqtrade",
   "initial_state": "running",
-  "forcebuy_enable": false,
   "internals": {
     "process_throttle_secs": 5
   }
