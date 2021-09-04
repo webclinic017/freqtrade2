@@ -37,8 +37,6 @@
             "rateLimit": 200
         },
         "pair_whitelist": [
-            "ALGO/BTC"
-
         ],
         "pair_blacklist": [
             "BNB/BTC"
