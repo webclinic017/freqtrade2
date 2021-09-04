@@ -1,19 +1,19 @@
 {
-  "max_open_trades": 15,
+  "max_open_trades": 10,
   "stake_currency": "USDT",
-  "stake_amount": "unlimited",
+  "stake_amount" : "unlimited",
   "tradable_balance_ratio": 0.99,
-  "fiat_display_currency": "EUR",
-  "timeframe": "1m",
+  "fiat_display_currency": "USD",
+  "timeframe": "15m",
   "dry_run": true,
+  "dry_run_wallet": 1000,
   "cancel_open_orders_on_exit": false,
   "unfilledtimeout": {
     "buy": 10,
-    "sell": 30,
-    "unit": "minutes"
+    "sell": 30
   },
   "bid_strategy": {
-    "price_side": "ask",
+    "price_side": "bid",
     "ask_last_balance": 0.0,
     "use_order_book": false,
     "order_book_top": 1,
@@ -23,40 +23,27 @@
     }
   },
   "ask_strategy": {
-    "price_side": "bid",
+    "price_side": "ask",
     "use_order_book": false,
     "order_book_min": 1,
     "order_book_max": 1,
     "use_sell_signal": true,
     "sell_profit_only": false,
-    "ignore_roi_if_buy_signal": false,
-    "ignore_buying_expired_candle_after": 600
+    "ignore_roi_if_buy_signal": false
   },
-  "order_types": {
-    "buy": "market",
-    "sell": "market",
-    "forcesell": "market",
-    "emergencysell": "market",
-    "stoploss": "market",
-    "stoploss_on_exchange": false,
-    "stoploss_on_exchange_interval": 60
-  },
-  "download_trades": true,
   "exchange": {
     "name": "binance",
     "key": "",
     "secret": "",
-    "ccxt_config": {
-      "enableRateLimit": true
-    },
+    "ccxt_config": {"enableRateLimit": true},
     "ccxt_async_config": {
       "enableRateLimit": true,
       "rateLimit": 200
     },
     "pair_whitelist": [
       "ALGO/USDT",
-      "BTC/USDT",
       "ATOM/USDT",
+      "BTC/USDT",
       "BAT/USDT",
       "BCH/USDT",
       "EOS/USDT",
@@ -70,41 +57,22 @@
       "XTZ/USDT"
     ],
     "pair_blacklist": [
+      "BNB/BTC",
+      "BNB/BUSD",
+      "BNB/ETH",
+      "BNB/EUR",
+      "BNB/NGN",
+      "BNB/PAX",
+      "BNB/RUB",
+      "BNB/TRY",
+      "BNB/TUSD",
+      "BNB/USDC",
+      "BNB/USDS",
+
     ]
   },
   "pairlists": [
-    {
-      "method": "VolumePairList",
-      "number_assets": 20,
-      "sort_key": "quoteVolume",
-      "refresh_period": 1800
-    },
-    {
-      "method": "AgeFilter",
-      "min_days_listed": 10
-    },
-    {
-      "method": "PriceFilter",
-      "low_price_ratio": 0.001
-    },
-    {
-      "method": "SpreadFilter",
-      "max_spread_ratio": 0.005
-    },
-    {
-      "method": "RangeStabilityFilter",
-      "lookback_days": 3,
-      "min_rate_of_change": 0.1,
-      "refresh_period": 1440
-    },
-    {
-      "method": "VolumePairList",
-      "number_assets": 15,
-      "sort_key": "quoteVolume"
-    },
-    {
-      "method": "PerformanceFilter"
-    }
+    {"method": "StaticPairList"}
   ],
   "edge": {
     "enabled": false,
