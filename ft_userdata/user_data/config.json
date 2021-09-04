@@ -54,6 +54,19 @@
       "rateLimit": 200
     },
     "pair_whitelist": [
+      "ALGO/USDT",
+      "ATOM/USDT",
+      "BAT/USDT",
+      "BCH/USDT",
+      "EOS/USDT",
+      "ETH/USDT",
+      "IOTA/USDT",
+      "LINK/USDT",
+      "LTC/USDT",
+      "NEO/USDT",
+      "XMR/USDT",
+      "XRP/USDT",
+      "XTZ/USDT"
     ],
     "pair_blacklist": [
     ]
