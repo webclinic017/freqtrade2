@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
     container_name: freqtrade
     volumes:
-      - "./user_data:/freqtrade/user_data"
+      - "./user_data:/freqtrade2/user_data"
     # Expose api on port 8080 (localhost only)
     # Please read the https://www.freqtrade.io/en/latest/rest-api/ documentation
     # before enabling this.
@@ -23,6 +23,6 @@ services:
     command: >
       trade 
       --dry-run-wallet 200
-      --config /freqtrade/user_data/mgm-config.json
-      --config /freqtrade/user_data/mgm-config-hyperopt.json
+      --config /freqtrade2/user_data/mgm-config.json
+      --config /freqtrade2/user_data/mgm-config-hyperopt.json
       --strategy MoniGoManiHyperStrategy
