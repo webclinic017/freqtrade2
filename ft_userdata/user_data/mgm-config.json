@@ -243,7 +243,7 @@
   "api_server": {
     "enabled": true,
     "listen_ip_address": "0.0.0.0",
-    "listen_port": 4269,
+    "listen_port": 4270,
     "verbosity": "error",
     "enable_openapi": false,
     "jwt_secret_key": "7f38009231df0749407cef419929bb899f654d7d4790f08b30bcc2b41f5cafe3",
