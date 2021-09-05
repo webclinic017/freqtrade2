@@ -23,5 +23,5 @@ services:
     command: >
       trade 
       --dry-run-wallet 200
-      --config /freqtrade/user_data/config.json
-      --strategy Diamond
+      --config /freqtrade/user_data/mgm-config.json
+      --strategy MoniGoManiHyperStrategy
