@@ -24,4 +24,5 @@ services:
       trade 
       --dry-run-wallet 200
       --config /freqtrade/user_data/mgm-config.json
+      --config /freqtrade/user_data/mgm-config-hyperopt.json
       --strategy MoniGoManiHyperStrategy

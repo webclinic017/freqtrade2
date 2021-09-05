@@ -172,12 +172,12 @@
 
     ]
   },
-  "pairlists": [
+  "_pairlists": [
     {
       "method": "StaticPairList"
     }
   ],
-  "_pairlists": [
+  "pairlists": [
     {
       "method": "VolumePairList",
       "number_assets": 120,
