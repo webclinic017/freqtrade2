@@ -1,8 +1,8 @@
 {
   "monigomani_settings": {
-    "timeframe": "5m",
+    "timeframe": "1h",
     "backtest_timeframe": "5m",
-    "startup_candle_count": 1,
+    "startup_candle_count": 400,
     "precision": 1,
     "roi_table_step_size": 5,
     "trading_during_trends": {
