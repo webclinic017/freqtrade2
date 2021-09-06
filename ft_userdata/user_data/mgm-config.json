@@ -172,15 +172,15 @@
 
     ]
   },
-  "_pairlists": [
+  "pairlists": [
     {
       "method": "StaticPairList"
     }
   ],
-  "pairlists": [
+  "_pairlists": [
     {
       "method": "VolumePairList",
-      "number_assets": 120,
+      "number_assets": 40,
       "sort_key": "quoteVolume",
       "refresh_period": 1440
     },

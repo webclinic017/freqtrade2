@@ -1,0 +1,72 @@
+{
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 30,
+            "sort_key": "quoteVolume",
+            "refresh_period": 1800
+        },
+        { 
+            "method": "AgeFilter", 
+            "min_days_listed": 200
+        },
+        { 
+            "method": "PriceFilter", 
+            "low_price_ratio": 0.10 
+        },
+        { 
+            "method": "ShuffleFilter" 
+        },
+        { 
+            "method": "SpreadFilter", 
+            "max_spread_ratio": 0.005 
+        },
+        {   
+            "method": "RangeStabilityFilter",
+            "lookback_days": 10, 
+            "min_rate_of_change": 0.01,
+            "refresh_period": 1440
+        },
+        {
+            "method": "VolatilityFilter",
+            "lookback_days": 5,
+            "min_volatility": 0.05,
+            "max_volatility": 0.50,
+            "refresh_period": 1440
+        },
+        {
+            "method": "VolumePairList",
+            "number_assets": 6,
+            "sort_key": "quoteVolume"
+        }
+    ],
+    "exchange": {
+        "name": "binance",
+        "pair_blacklist": [
+            ".*USD/USDT",
+            "USD.*/USDT",
+            ".*DOWN/BTC",
+            ".*UP/BTC",
+            ".*DOWN/ETH",
+            ".*UP/ETH",
+            ".*DOWN/USDT",
+            ".*UP/USDT",
+            ".*DOWN/BNB",
+            ".*UP/BNB",
+            ".*/BNB",
+            "BNB/.*",
+            ".*_PREMIUM",
+            ".*PERP",
+            ".*BULL/.*",
+            ".*BEAR/.*",
+            ".*BULL2021/.*",
+            ".*BEAR2021/.*"
+        ],
+        "ccxt_config": {
+            "enableRateLimit": true
+        },
+        "ccxt_async_config": {
+            "enableRateLimit": true
+        }
+    }
+}
